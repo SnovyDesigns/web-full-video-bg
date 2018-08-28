@@ -114,8 +114,13 @@ module.exports = env => {
           ]
         },
         {
-          test: /\.(mov|mp4)$/,
-          loader: 'url-loader'
+          test: /\.(mov|mp4|ogv|webm)$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              name: 'videos/[name].[ext]'
+            }
+          }
         }
       ]
     },
