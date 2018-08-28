@@ -101,7 +101,7 @@ module.exports = env => {
           test: /\.html$/,
           use: [
             {
-              loader: 'html-loader'
+              loader: 'html-loader?attrs[]=video:src'
             }
           ]
         },
@@ -112,6 +112,10 @@ module.exports = env => {
               loader: 'pug-loader'
             }
           ]
+        },
+        {
+          test: /\.(mov|mp4)$/,
+          loader: 'url-loader'
         }
       ]
     },

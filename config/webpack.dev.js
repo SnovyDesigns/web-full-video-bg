@@ -93,13 +93,17 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader'
+            loader: 'html-loader?attrs[]=video:src'
           }
         ]
       },
       {
         test: /\.pug$/,
-        use: ['html-loader', 'pug-html-loader']
+        use: ['html-loader?attrs[]=video:src', 'pug-html-loader']
+      },
+      {
+        test: /\.(mov|mp4|ogv|webm)$/,
+        loader: 'file-loader'
       }
     ]
   },
